@@ -1,0 +1,17 @@
+{
+    "name": "admin/thaivm2",
+    "autoload": {
+        "psr-4": {
+            "Admin\\Thaivm2\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thaivm2",
+            "email": "thaivm2@fpt.edu.vn"
+        }
+    ],
+    "require": {
+        "phroute/phroute": "^2.2"
+    }
+}
