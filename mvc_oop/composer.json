@@ -2,7 +2,7 @@
     "name": "admin/thaivm2",
     "autoload": {
         "psr-4": {
-            "Admin\\Thaivm2\\": "app/"
+            "App\\": "app/"
         }
     },
     "authors": [

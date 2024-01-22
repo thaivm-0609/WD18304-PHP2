@@ -13,7 +13,7 @@ class ComposerStaticInitc550857b03fb2ab5c3ca106fd2004c5f
         ),
         'A' => 
         array (
-            'Admin\\Thaivm2\\' => 14,
+            'App\\' => 4,
         ),
     );
 
@@ -22,7 +22,7 @@ class ComposerStaticInitc550857b03fb2ab5c3ca106fd2004c5f
         array (
             0 => __DIR__ . '/..' . '/phroute/phroute/src/Phroute',
         ),
-        'Admin\\Thaivm2\\' => 
+        'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
