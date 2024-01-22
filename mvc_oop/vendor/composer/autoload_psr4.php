@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Phroute\\Phroute\\' => array($vendorDir . '/phroute/phroute/src/Phroute'),
-    'Admin\\Thaivm2\\' => array($baseDir . '/app'),
+    'App\\' => array($baseDir . '/app'),
 );

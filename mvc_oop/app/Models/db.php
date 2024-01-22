@@ -1,30 +1,29 @@
 <?php 
-    class db {
-        CONST SVNAME = "localhost";
-        CONST DBNAME = "wd18304";
-        CONST USERNAME = "root";
-        CONST PASSWORD = "";
+namespace App\Models;
 
-        //tạo kết nối với CSDL
-        public function getConnect() {
-            $connect = new PDO(
-                "mysql:host=" . SVNAME
-                . ";dbname=" . DBNAME,
-                USERNAME,
-                PASSWORD
-            );
+use PDO;
 
-            return $connect;
-        }
+class db {
+    //tạo kết nối với CSDL
+    public function getConnect() {
+        $connect = new PDO(
+            "mysql:host=" . SVNAME
+            . ";dbname=" . DBNAME,
+            USERNAME,
+            PASSWORD
+        );
 
-        //lấy dữ liệu từ trong CSDL, nhận tham số đầu vào 
-        //là câu truy vấn SQL
-        public function getData($sql) { 
-            $conn = $this->getConnect(); //khởi tạo kết nối vs CSDL
-            $stmt = $conn->prepare($sql);
-            $stmt->execute($sql);
-
-            return $stmt->fetchAll();
-        }
+        return $connect;
     }
+
+    //lấy dữ liệu từ trong CSDL, nhận tham số đầu vào 
+    //là câu truy vấn SQL
+    public function getData($sql) { 
+        $conn = $this->getConnect(); //khởi tạo kết nối vs CSDL
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+}
 ?>
