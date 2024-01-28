@@ -1,6 +1,8 @@
 <?php
 /**Điều hướng website */
 use Phroute\Phroute\RouteCollector;
+use App\Controllers\Admin\ProductController; 
+use App\Controllers\User\ProductController as UserProduct;
 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 $router = new RouteCollector();
@@ -30,8 +32,18 @@ $router->filter('auth', function(){
         return false;
     }
 });
-$router->get('/', [App\Controllers\ProductController::class,'getAllProduct']);    # match only get requests
-
+$router->get('/', [ProductController::class,'getAllProduct']);    # match only get requests
+$router->get('/products/{id}/edit', [ProductController::class, 'edit']); //đưa người dùng vào trang sửa sản phẩm
+$router->post('/products/{id}/update', [ProductController::class,'update']); //cập nhật dữ liệu vào DB
+$router->get('/login', function () {
+    echo "Đây là trang đăng nhập";
+});    # match only get requests
+$router->get('/create-product', function () {
+    echo "Day la trang them moi san pham";
+}); //trả về giao diện tạo mới sản phẩm
+$router->post('/save-product', function () {
+    echo "Thêm mới sản phẩm thành công";
+}); //đẩy dữ liệu lên sv để lưu 
 /** Route group 
  * prefix group: đặt tiền tố chung cho 1 nhóm các route
  * filter group: filter cho cả group, các route con cũng sẽ đc áp dụng filter

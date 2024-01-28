@@ -7,6 +7,8 @@
     <title>Danh sách sản phẩm</title>
 </head>
 <body>
+    <a href="<?=route('login')?>">Login</a>
+    <a href="<?=route('create-product')?>">Thêm mới</a>
     <table>
         <tr>
             <th>ID</th>
@@ -14,6 +16,7 @@
             <th>Description</th>
             <th>Price</th>
             <th>Status</th>
+            <th>Action</th>
         </tr>
         <?php foreach ($products as $product) { 
             extract($product);    
@@ -24,6 +27,10 @@
                 <td><?=$description?></td>
                 <td><?=$price?></td>
                 <td><?=$status?></td>
+                <td>
+                    <a href="<?=route('/products/'.$id.'/edit')?>">Edit</a>
+                    <a href="">Delete</a>
+                </td>
             </tr>
         <?php } ?>
     </table>
