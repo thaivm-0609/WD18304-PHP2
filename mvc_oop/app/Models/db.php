@@ -25,5 +25,13 @@ class db {
 
         return $stmt->fetchAll();
     }
+
+    public function getDataById($sql) {
+        $conn = $this->getConnect(); //khởi tạo kết nối vs CSDL
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
 }
 ?>

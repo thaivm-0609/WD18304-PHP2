@@ -10,6 +10,12 @@ class Product extends db {
 
         return $this->getData($query);
     }
+
+    public function getById($id) {
+        $query = "SELECT * FROM products WHERE id=".$id;
+
+        return $this->getDataById($query);
+    }
 }
 
 ?>
